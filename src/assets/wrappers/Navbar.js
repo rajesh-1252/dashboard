@@ -18,6 +18,14 @@ const Wrappers = styled.nav`
     margin-left: 0px;
     width: 100%;
   }
+  .rightside {
+    position: relative;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 3.3rem;
+  }
   @media (max-width: 500px) {
     input,
     .searchbtn {

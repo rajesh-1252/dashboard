@@ -3,8 +3,8 @@ const Wrappers = styled.aside`
   z-index: 200;
   .sidebar-container {
     background-color: var(--secondary-500);
+    position: fixed;
     min-height: 100vh;
-    margin-top: -70px;
     height: 100%;
     width: 250px;
     margin-left: -250px;

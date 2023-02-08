@@ -1,21 +1,29 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Wrappers from "../assets/wrappers/SharedLayout";
+import { useAppcontext } from "../context/appcontext";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
 const SharedLayout = () => {
+  const { toggleSidebarValue } = useAppcontext();
   return (
     <Wrappers>
-      <div className="dashboard">
+      <main className="dashboard">
+        <Sidebar />
         <div>
           <Navbar />
-          <Sidebar />
-          <div className="dashboard-page">
+          <div
+            className={
+              toggleSidebarValue
+                ? "dashboard-page not-active"
+                : "dashboard-page"
+            }
+          >
             <Outlet />
           </div>
         </div>
-      </div>
+      </main>
     </Wrappers>
   );
 };
